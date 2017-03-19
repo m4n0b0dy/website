@@ -1,0 +1,13 @@
+/* want to do sepicifc style for each blog */
+.link-ds{
+	color: var(--col3);
+	text-decoration: none;
+	transition: all 0.4s;
+}
+.link-ds:hover{
+	color: #55aaaa;
+	text-decoration: underline;
+	text-decoration-color: currentColor;
+	cursor: pointer;
+}
+/* can add different style links for other blogs */

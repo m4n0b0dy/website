@@ -1,0 +1,144 @@
+/*rest is gallery stuff*/
+h2 {
+  font-family: var(--font1);
+  margin: 0 1 0em;
+  font-size: 1.7em;
+}
+
+h3 {
+  font-family: var(--font1);
+  padding-top: 20px;
+  margin: 0 0 .5em;
+  font-size: 1em;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex: 1 1 auto;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.nav-item {
+  position: relative;
+  padding: 0 5px;
+  margin: 0 5px;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: grey;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.nav-item:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: grey;
+  transition: all 500ms;
+}
+.nav-item.active {
+  color: black;
+  transition: all 350ms;
+}
+.nav-item.active:before {
+  width: 100%;
+}
+
+.portfolio {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.project {
+  position: relative;
+  flex: 1 0 calc(100% - 20px);
+  margin: 10px;
+}
+.project:hover .project-info {
+  background: var(--col1);
+  opacity: .95;
+}
+@media (min-width: 520px) {
+  .project {
+    flex: 0 0 calc((100% / 2) - 20px);
+  }
+}
+@media (min-width: 860px) {
+  .project {
+    flex: 0 0 calc((100% / 3) - 20px);
+  }
+}
+
+.project-image img {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: var(--col2);
+  background: var(--col2);
+  opacity: 0;
+  transition: all 350ms ease-in;
+}
+.project-info:hover {
+  opacity: 1;
+}
+@media (max-width: 520px) {
+  .project-info {
+    opacity: .8;
+  }
+}
+
+.project-info-title {
+  text-align: center;
+}
+
+.project-info-sum {
+  text-align: center;
+}
+
+.project-info-button {
+  padding: .5em 1em;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--col2);
+  border-radius: 3px;
+  transition: all 350ms;
+}
+.project-info-button:hover {
+  color: var(--col1);
+  background: var(--col2);
+  border-color: var(--col2);
+}

@@ -1,0 +1,246 @@
+/* scroll stuff*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /* this gets rid of scrolling */
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+  background: -webkit-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+section h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: normal 300 64px/1 Raleway;
+  font-size: 5vw;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* I made the h2 and scroll ones*/
+section h2 {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: normal 300 20px/1 Raleway;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* scroll up*/
+section scroll2 {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: normal 300 20px/1 Raleway;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#a2 {
+  padding-top: 0px;
+}
+
+#a2 span2 {
+  position: absolute;
+  top: 114px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(135deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+#a2 span2:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+#a2 span2:nth-of-type(2) {
+  top: 130px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+
+#a2 span2:nth-of-type(3) {
+  top: 146px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* scroll down*/
+section scroll {
+  position: absolute;
+  top: 114px;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: normal 300 20px/1 Raleway;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#a1 {
+  padding-top: 80px;
+}
+
+#a1 span {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+#a1 span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+#a1 span:nth-of-type(2) {
+  top: 58px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+
+#a1 span:nth-of-type(3) {
+  top: 74px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#crowd {
+  background: url("../pictures/home/crowd.jpg") center center/cover no-repeat;
+}
+
+#valley {
+  background: url("../pictures/home/valley.jpg") center center/cover no-repeat;
+}
+
+#harvard {
+  background: url("../pictures/home/harvard.jpg") center center/cover no-repeat;
+}
+
+#sanfran {
+  background: url("../pictures/home/sf.jpg") center center/cover no-repeat;
+}
+
+#projects {
+  background: url("../pictures/home/social_edit.jpg") center center/cover no-repeat;
+}
+
+.demo a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: normal 400 20px/1 var(--font3), sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+.demo a:hover {
+  opacity: .5;
+}

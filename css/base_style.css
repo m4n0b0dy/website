@@ -1,0 +1,134 @@
+:root {
+    --col1: #5e080e;
+    --col2: #d3abae;
+    --col4: #ffddcc;
+    --col3: #b3b3ff;
+    --font1: 'Space Mono';
+    --font2: 'Buda';
+    --font3: 'Raleway';
+    --font4: 'Passion One';
+}
+
+body {
+   background-color: white;
+   margin: 0px;
+}
+/* Header & Navigation */
+header{
+  max-width: 100%;
+  padding: 0px;
+}
+nav{
+  width: 100%;
+  margin-bottom: 1em;
+  background: var(--col1);
+  font-family: var(--font4);
+}
+
+#topBar {
+   top: 0%;
+   width: 100%;
+   height: 80px;
+   background-color: var(--col1);
+   border-bottom: 1px solid black;
+   z-index: 5;
+   position: fixed;
+}
+
+#initials {
+   display: inline;
+   width: 100px;
+   min-width: 100px;
+   height: 80px;
+   font-size: 50px;
+   line-height: 80px;
+   font-family: var(--font1);
+   position: fixed;
+   text-align: center;
+   color: var(--col2);
+   background-color: var(--col1);
+   text-decoration: none;
+}
+#top_pic{
+  position: fixed;
+  padding-left: 150px;
+}
+#navWrapper {
+   width: 100%;
+   position: fixed;
+   top: 0px;
+   z-index: 6;
+}
+/* want to improve this in time*/
+#navwrap_but {
+   width: 100%;
+   font-size: 225%; font-size: 2.5vw;
+   padding-left: 2cm;
+   position: fixed;
+   top: 0px;
+   z-index: 6;
+   font-family: var(--font4);
+   text-align: fixed;
+   font-weight: 100;
+   text-decoration: none;
+}
+
+nav li {
+   line-height: 80px;
+   padding-right: 50px;
+   display: inline-block;
+   font-family: var(--font4);
+}
+
+nav a {
+   text-decoration: none;
+   color: var(--col2);
+   transition: 0.90s;
+}
+
+nav a:hover {
+   color: var(--col1);
+   background-color: var(--col2);
+   opacity: 1.0;
+   text-decoration: none;
+}
+
+#centerColumn {
+   width: 50%;
+   margin: auto;
+}
+
+#introText {
+   margin-top: 160px;
+   font-size: 40px;
+   font-family: var(--font2);
+   padding-bottom: 10px;
+   border-bottom: 5px solid var(--col2);
+   font-weight: bold;
+}
+
+#subIntroText {
+   font-family: var(--font3);
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+#subIntroText p {
+   font-family: var(--font3);
+   font-size: 16px;
+   line-height: 20px;
+   color: black;
+}
+/* for highlighting certain text */
+#subIntroText p a {
+   color: var(--col2);
+   text-decoration: none;
+}
+
+#divider {
+   height: 10px;
+   width: 100%;
+   background-color: var(--col2);
+   margin-top: 50px;
+}
+

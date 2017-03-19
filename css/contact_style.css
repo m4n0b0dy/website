@@ -1,0 +1,9 @@
+#success_message{ display: none;}
+
+fieldset{background-color: var(--col3);
+        color: black;
+        }
+
+.fsSubmitButton{
+    background-color: #4CAF50;
+}

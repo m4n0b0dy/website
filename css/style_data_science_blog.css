@@ -1,7 +1,7 @@
 :root {
     --text_color: #222;
-    --bg_color: #52527a;
-    --log_bg: #55aaaa;
+    --bg_color: #71A9F7;
+    --log_bg: #C6D8FF;
     --but_color: #009ACD;
     --but_hov_color: #005c7b;
     --logo_text_color: black;
@@ -9,7 +9,7 @@
     --art_text_hover: var(--col3);
     --post_bg: #fff;
     --date_color: #9C9C9C;
-    --post_line_color: #55aaaa;
+    --post_line_color: #C6D8FF;
 }
 body{
 	margin: 0;

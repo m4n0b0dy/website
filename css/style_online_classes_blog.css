@@ -68,6 +68,7 @@ a{
 .blog-post{
 	font-weight: var(--chalk_weight);
 	margin: 0 auto 2em auto;
+	padding: 10px;
 }
 .blog-content{
 	font-weight: var(--chalk_weight);

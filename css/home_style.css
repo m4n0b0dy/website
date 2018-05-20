@@ -141,7 +141,7 @@ section scroll {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #fff;
-  font: normal 300 20px/1 Raleway;
+  font: normal 300 20px/1 var(--font3);
   text-align: center;
   white-space: nowrap;
 }

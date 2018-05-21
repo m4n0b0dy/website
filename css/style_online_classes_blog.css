@@ -2,17 +2,9 @@
 
 :root {
 	--chalk_font: 'Fredericka the Great';
-    --text_color: #222;
-    --bg_color: #71A9F7;
-    --log_bg: #000000;
-    --but_color: #009ACD;
-    --but_hov_color: #005c7b;
-    --logo_text_color: #efefef;
-    --art_text_link: var(--col1);
-    --art_text_hover: var(--col3);
-    --post_bg: #fff;
-    --date_color: #9C9C9C;
-    --post_line_color: #C6D8FF;
+    --text_color: #efefef;
+    --art_text_hover: white;
+    --post_line_color: #FFFFFF;
     --font_weight: 50;
 }
 body{
@@ -22,7 +14,7 @@ body{
 	line-height: 1.4em;
 	background-image: url("../pictures/blogs/chalkboard.jpg");
 	background-size:cover;
-	color: var(--logo_text_color);
+	color: var(--text_color);
 	font-family: var(--chalk_font);
 	font-weight: var(--chalk_weight);
 }
@@ -55,7 +47,7 @@ a{
 /* making this invisible basically */
 .logo{
 	text-align: center;
-	color: var(--logo_text_color);
+	color: var(--text_color);
   	font-size: 3.55vw;
 	font-weight: var(--chalk_weight);
 	font-family: var(--chalk_font);
@@ -77,33 +69,37 @@ a{
 .blog-content-list{
 	font-weight: var(--chalk_weight);
 	font-size: 1vw;
-	border-left: 15px solid var(--post_line_color);
+	border-left: 5px solid var(--post_line_color);
 	padding-left: 15px;
 }
 .blog-title{
 	font-weight: var(--chalk_weight);
+	text-decoration: underline;
 	font-size: 2vw;
 	margin-top: 0px;
 }
 .date{
 	font-weight: var(--chalk_weight);
 	font-size: 1em;
-	font-weight: var(--chalk_weight);
-	color: var(--date_color);
+	color: var(--text_color);
 	margin-top: -10px;
-	text-decoration: underline;
-	text-decoration-color: currentColor;
 }
 .post-link{
 	font-weight: var(--chalk_weight);
-	color: var(--logo_text_color);
-	font-style: underline;
+	color: var(--text_color);
+	text-decoration: underline overline;;
 	transition: all 0.4s;
 }
-.post-link:hover{
-	font-weight: var(--chalk_weight);
-	color: var(--art_text_hover);
-	text-decoration: underline;
-	text-decoration-color: currentColor;
-	cursor: pointer;
+.post-link:hover {
+   animation-name: flash;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: var(--art_text_link);}
+    to {color: black;}
 }

@@ -39,18 +39,18 @@ a{
 .col {
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 0 1% 0%;
 }
 .col:first-child { margin-left: 0; }
 
 .span_3_of_3 {
-	width: 105%;
+	width: 100%;
 }
 .span_2_of_3 {
-	width: 66.1%;
+	width: 65%;
 }
 .span_1_of_3 {
-	width: 32.2%;
+	width: 35%;
 }
 .logo{
   	background: var(--log_bg);

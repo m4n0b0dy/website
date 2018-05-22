@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+@import url(https://use.fontawesome.com/releases/v5.0.13/css/all.css);
 
 :root {
 	--chalk_font: 'Fredericka the Great';
@@ -62,7 +63,7 @@ a{
 	padding-left: 15px;
 }
 
-.date{
+.tags{
 	font-weight: var(--chalk_weight);
 	font-size: 1em;
 	color: var(--text_color);
@@ -101,4 +102,8 @@ input {
     background: transparent;
     outline: dashed;
     margin-bottom: 20px; /* Add some space below the input */
+}
+i{
+	font-weight: var(--chalk_weight);
+	font-size: 1.2vw;
 }

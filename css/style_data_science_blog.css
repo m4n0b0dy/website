@@ -38,7 +38,6 @@ a{
 }
 .col {
 	display: block;
-	float:left;
 	margin: 1% 0 1% 0%;
 }
 .col:first-child { margin-left: 0; }
@@ -47,10 +46,12 @@ a{
 	width: 100%;
 }
 .span_2_of_3 {
-	width: 65%;
+	float: left;
+	width: 60%;
 }
 .span_1_of_3 {
-	width: 35%;
+	float: right;
+	width: 30%;
 }
 .logo{
   	background: var(--log_bg);

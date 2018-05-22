@@ -10,7 +10,6 @@
 body{
 	margin: 0;
 	padding: 0;
-	font-size: 16px;
 	line-height: 1.4em;
 	background-image: url("../pictures/blogs/chalkboard.jpg");
 	background-size:cover;
@@ -19,28 +18,16 @@ body{
 	font-weight: var(--chalk_weight);
 }
 /* Base Styles */
-img{
-	max-width: 100%;
-	height: auto;
-	border-radius: 3px;
-}
 a{
 	text-decoration: none;
 	color: inherit;
 }
 /* Grid */
-.section {
-	clear: both;
-	padding: 0;
-	margin: 0;
-}
 .col {
 	display: block;
 	float:left;
 	margin: 1% 0 1% 0%;
 }
-.col:first-child { margin-left: 0; }
-
 .span_3_of_3 {
 	width: 100%;
 }
@@ -48,19 +35,21 @@ a{
 .logo{
 	text-align: center;
 	color: var(--text_color);
-  	font-size: 3.55vw;
+  	font-size: 3.2vw;
 	font-weight: var(--chalk_weight);
 	font-family: var(--chalk_font);
   	padding: 90px;
 }
 /* Blog Posts */
-.container{
-	max-width: 1020px;
-}
 .blog-post{
 	font-weight: var(--chalk_weight);
-	margin: 0 auto 2em auto;
-	padding: 10px;
+	margin: 0 auto 1.5em auto;
+}
+.blog-title{
+	font-weight: var(--chalk_weight);
+	text-decoration: underline;
+	font-size: 2vw;
+	margin-top: 0px;
 }
 .blog-content{
 	font-weight: var(--chalk_weight);
@@ -72,12 +61,7 @@ a{
 	border-left: 5px solid var(--post_line_color);
 	padding-left: 15px;
 }
-.blog-title{
-	font-weight: var(--chalk_weight);
-	text-decoration: underline;
-	font-size: 2vw;
-	margin-top: 0px;
-}
+
 .date{
 	font-weight: var(--chalk_weight);
 	font-size: 1em;
@@ -91,15 +75,30 @@ a{
 	transition: all 0.4s;
 }
 .post-link:hover {
-   animation-name: flash;
+   	animation-name: flash;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
 }
-
 @keyframes flash {
     from {color: var(--art_text_link);}
     to {color: black;}
+}
+/* search stuff */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text_color);
+}
+input {
+	font-weight: var(--chalk_weight);
+	color: var(--text_color);
+	font: var(--chalk_font);
+	float: right;
+    width: 23%; /* Full-width */
+    font-size: 1.6vw; /* Increase font-size */
+    padding: 15px 15px 15px 15px; /* Add some padding */
+    background: transparent;
+    outline: dashed;
+    margin-bottom: 20px; /* Add some space below the input */
 }

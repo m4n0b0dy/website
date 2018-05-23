@@ -3,8 +3,8 @@
 
 :root {
 	--chalk_font: 'Fredericka the Great';
-    --text_color: #efefef;
-    --art_text_hover: white;
+    --text_color: white;
+    --art_text_hover: black;
     --post_line_color: #FFFFFF;
     --font_weight: 50;
 }
@@ -85,7 +85,7 @@ a{
 }
 @keyframes flash {
     from {color: var(--art_text_link);}
-    to {color: black;}
+    to {color: var(--art_text_hover);}
 }
 /* search stuff */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

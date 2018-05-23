@@ -14,6 +14,8 @@ body{
 	line-height: 1.4em;
 	background-image: url("../pictures/blogs/chalkboard.jpg");
 	background-size:cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
 	color: var(--text_color);
 	font-family: var(--chalk_font);
 	font-weight: var(--chalk_weight);

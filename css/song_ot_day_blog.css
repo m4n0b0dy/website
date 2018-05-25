@@ -1,101 +1,151 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic');
-/* may pitch error later */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css');
-
-/* can get rid of later */
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush');
+@import url('https://fonts.googleapis.com/css?family=New+Rocker');
+@import url('https://fonts.googleapis.com/css?family=Molle:400i');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
 :root {
-    --col1: #5e080e;
-    --col2: #EEB4B3;
-    --font1: 'Space Mono';
-    --font2: 'Buda';
-    --font3: 'Raleway';
-    --font4: 'Passion One';
+  /* overall attirbutes */
+  --text_color: white;
+  --text_font: ;
+  --text_weight: 600;
+  /* timeline attributes */
+  --time_col: gray;
+  --t_opac: .5;
+  /* flag attributes */
+  --flag_col: ;
+  --flag_tcol: white;
   
-    --flag_col: green;
-    --flag_tcol: white;
-    
+  /* otherdate attributes */
+  --logo_font_size: 1.8em;
+  --date_sz: .666em;
+  --date_tcol: white;
+  --date_bcol: ;
+  --desc_font_size: .5em;
+  --space_bt_icons: 3em;
+  /* genre stuff */
+  --rap_font:"Rock Salt";
+  --rap_weight:5;
+
+  --rnb_font:"Molle";
+  --rnb_weight:1;
+
+  --classic_font:"Alex Brush";
+  --classic_weight:50;
+
+  --indie_font:"Special Elite";
+  --indie_weight:50;
+
+  --rock_font:"New Rocker";
+  --rock_weight:50;
+  /* these are kind like multipliers for font size*/
+  --rock_size: 2.7em;
+  --rap_size: 2.5em;
+  --classic_size: 3.1em;
+  --indie_size: 3em;
+  --rnb_size: 2.9em;
 }
 
-body {	
+body {
   margin: 0;
   padding: 0;
-  background: rgb(230,230,230);
-  color: rgb(50,50,50);
-  font-family: 'Open Sans', sans-serif;
-  font-size: 112.5%;
-  line-height: 1.6em;
-  z-index: -1;
+  line-height: 1.4em;
+  background-image: url("../pictures/blogs/graf.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--text_font);
+  font-weight: var(--text_weight);
+  overflow-x:hidden;
 }
 .logo{
 	text-align: left;
 	color: var(--text_color);
-  font-size: 1.8em;
-	font-weight: var(--chalk_weight);
-	font-family: var(--chalk_font);
-  padding: 50px;
-  margin-bottom: 100px;
+  font-size: var(--logo_font_size);
+	font-weight: var(--text_weight);
+	font-family: var(--text_font);
+  padding: 80px;
+  margin-bottom: 200px;
 }
-input {
-  font-weight: var(--chalk_weight);
+.logo_right {
+  font-weight: var(--text_weight);
   color: var(--text_color);
-  font: var(--chalk_font);
+  font: var(--text_font);
   float: right;
-  width: 23%; /* Full-width */
-  font-size: .8em;
-  padding: 15px 15px 15px 15px; /* Add some padding */
-  background: transparent;
-  outline: dotted;
+  right: 20px; /* Full-width */
+  font-size: .5em;
 }
 a{
   color: inherit;
   text-decoration: none;
 }
+.logcon:before {
+  position: absolute;
+  right: 240px;
+  margin-top: -10px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-size:100%;
+  content:"";
+  -webkit-filter: invert(1);
+   filter: invert(1);
+}
+/* add these to vaariables */
+
+.logcon.rap:before{
+  background-image: url("../pictures/blogs/rap.png");}
+.logcon.rnb:before{
+  background-image: url("../pictures/blogs/rnb.png");}
+.logcon.rock:before{
+  background-image: url("../pictures/blogs/rock.png");}
+.logcon.classic:before{
+  background-image: url("../pictures/blogs/classic.png");}
+.logcon.indie:before{
+  background-image: url("../pictures/blogs/indie.png");}
 /* ================ The Timeline ================ */
 
 .timeline {
   position: relative;
-  width: 660px;
+  width: 100%;
   margin: 0 auto;
   padding: 1em 0;
   list-style-type: none;
+  
 }
-
 .timeline:before {
-  opacity: .2;
+  opacity: var(--t_opac);
   position: absolute;
   left: 50%;
   top: 0;
   content: ' ';
   display: block;
-  width: 40px;
+  width: 60px;
   height: 100%;
-  margin-left: -20px;
-  background: gray;
+  margin-left: -30px;
+  background: var(--time_col);
 }
 
 .timeline li {
-  padding: 1em 0;
+  padding: var(--space_bt_icons) 0;
 }
 
 .timeline li:after {
   content: "";
   display: block;
   height: 0;
-  clear: both;
-  visibility: hidden;
 }
 
 .direction-l {
+  width: 100%;
+  right: 55%;
   position: relative;
-  width: 300px;
-  float: left;
   text-align: right;
 }
 
 .direction-r {
+  width: 100%;
+  left: 55%;
   position: relative;
-  width: 300px;
-  float: right;
 }
 
 .flag-wrapper {
@@ -109,67 +159,39 @@ a{
   display: inline;
   background: var(--flag_col);
   color: var(--flag_tcol);
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-weight: 600;
   text-align: left;
 }
 
-/* change genre colors 
-[rap]{background: var(--rap_col);
-      color: var(--rap_tcol);}
-[rnb]{background: var(--rnb_col);
-      color: var(--rnb_tcol);}
-[rock]{background: var(--rock_col);
-      color: var(--rock_tcol);}
-[classic]{background: var(--classic_col);
-      color: var(--classic_tcol);}
-[indie]{background: var(--indie_col);
-      color: var(--indie_tcol);} */
-
-.direction-l .flag {
-  -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-}
-
-.direction-r .flag {
-  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
-}
-
-.direction-l .flag:before,
-.direction-r .flag:before {
+.icon:before {
   position: absolute;
-  top: 50%;
-  width: 40px; 
-  height: 40px;
+  width: 60px; 
+  height: 60px;
   margin-top: -20px;
   display: block;
-  z-index: 100;
   background-size:100%;
   content:"";
+  -webkit-filter: invert(1);
+   filter: invert(1);
 }
-.direction-l .flag:before{right: -50px;}
-.direction-r .flag:before{left: -50px;}
-
+/* sooo fucking frust to get this right */
+.icon:before{margin-left: -30px; left:50%;}
 /* can use icons here */
-.flag.rap:before{
+.icon.rap:before{
   background-image: url("../pictures/blogs/rap.png");}
-.flag.rnb:before{
+.icon.rnb:before{
   background-image: url("../pictures/blogs/rnb.png");}
-.flag.rock:before{
+.icon.rock:before{
   background-image: url("../pictures/blogs/rock.png");}
-.flag.classic:before{
+.icon.classic:before{
   background-image: url("../pictures/blogs/classic.png");}
-.flag.indie:before{
+.icon.indie:before{
   background-image: url("../pictures/blogs/indie.png");}
+
 
 .time-wrapper {
   display: inline;
   line-height: 1em;
-  font-size: 0.66666em;
+  font-size: var(--date_sz);
   color: var(--date_col);
   vertical-align: middle;
 }
@@ -185,22 +207,35 @@ a{
 .time {
   display: inline-block;
   padding: 4px 6px;
-  background: rgb(248,248,248);
+  font-size: var(--date_sz);
+  background: var(--date_bcol);
+  color: var(--date_tcol);
 }
 
 .desc {
-  margin: 1em 0.75em 0 0;
-  
-  font-size: 0.77777em;
+  margin: 0em 0.75em 0 0;
+  color: var(--text_color);
+  font-size: var(--desc_font_size);
   font-style: italic;
   line-height: 1.5em;
 }
 
 .direction-r .desc {
-  margin: 1em 0 0 0.75em;
+  margin: 0em 0 0 0.75em;
+}
+/* specific to rap font */
+.rap .desc {
+  margin: .2em 0 0 0.75em;
 }
 
-/* ================ Timeline Media Queries ================ */
+/* change genre fonts */
+.rap{font-family: var(--rap_font);font-weight: var(--rap_weight);font-size: var(--rap_size);}
+.rnb{font-family: var(--rnb_font);font-weight: var(--rnb_weight);font-size: var(--rnb_size);}
+.rock{font-family: var(--rock_font);font-weight: var(--rock_weight);font-size: var(--rock_size);}
+.classic{font-family: var(--classic_font);font-weight: var(--classic_weight);font-size: var(--classic_size);}
+.indie{font-family: var(--indie_font);font-weight: var(--indie_weight);font-size: var(--indie_size);}
+
+/* ================ Timeline Media Queries ================ 
 
 @media screen and (max-width: 660px) {
 
@@ -307,3 +342,4 @@ a{
 }
 
 }
+*/

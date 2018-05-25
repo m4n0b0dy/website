@@ -3,22 +3,23 @@
 @import url('https://fonts.googleapis.com/css?family=New+Rocker');
 @import url('https://fonts.googleapis.com/css?family=Molle:400i');
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=VT323');
 :root {
   /* overall attirbutes */
   --text_color: white;
-  --text_font: ;
-  --text_weight: 600;
+  --text_font: var(--font4);
+  --text_weight: 1;
   /* timeline attributes */
-  --time_col: gray;
+  --time_col: var(--col1);
   --t_opac: .5;
   /* flag attributes */
   --flag_col: ;
   --flag_tcol: white;
   
   /* otherdate attributes */
-  --logo_font_size: 1.8em;
+  --logo_font_size: 4em;
   --date_sz: .666em;
-  --date_tcol: white;
+  --date_tcol: var(--flag_tcol);
   --date_bcol: ;
   --desc_font_size: .5em;
   --space_bt_icons: 3em;
@@ -37,12 +38,16 @@
 
   --rock_font:"New Rocker";
   --rock_weight:50;
+
+  --edm_font:"VT323";
+  --edm_weight:1;
   /* these are kind like multipliers for font size*/
   --rock_size: 2.7em;
-  --rap_size: 2.5em;
+  --rap_size: 2.3em;
   --classic_size: 3.1em;
-  --indie_size: 3em;
+  --indie_size: 2.8em;
   --rnb_size: 2.9em;
+  --edm_size:3.2em;
 }
 
 body {
@@ -56,6 +61,7 @@ body {
   font-family: var(--text_font);
   font-weight: var(--text_weight);
   overflow-x:hidden;
+  color: var(--text_color);
 }
 .logo{
 	text-align: left;
@@ -64,15 +70,24 @@ body {
 	font-weight: var(--text_weight);
 	font-family: var(--text_font);
   padding: 80px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 .logo_right {
   font-weight: var(--text_weight);
   color: var(--text_color);
   font: var(--text_font);
   float: right;
-  right: 20px; /* Full-width */
-  font-size: .5em;
+  font-size: .22em;
+}
+.logo_cap{
+  margin-top: 50px;
+  font-size:.5em;
+}
+.logo_caps{
+  float: right;
+  right: 15px;
+  margin-top: -10px;
+  font-size:.9em;
 }
 a{
   color: inherit;
@@ -81,7 +96,7 @@ a{
 .logcon:before {
   position: absolute;
   right: 240px;
-  margin-top: -10px;
+  margin-top: -5px;
   width: 40px;
   height: 40px;
   display: block;
@@ -92,16 +107,18 @@ a{
 }
 /* add these to vaariables */
 
-.logcon.rap:before{
-  background-image: url("../pictures/blogs/rap.png");}
-.logcon.rnb:before{
-  background-image: url("../pictures/blogs/rnb.png");}
-.logcon.rock:before{
-  background-image: url("../pictures/blogs/rock.png");}
-.logcon.classic:before{
-  background-image: url("../pictures/blogs/classic.png");}
-.logcon.indie:before{
-  background-image: url("../pictures/blogs/indie.png");}
+.logcon.rap:before,
+.icon.rap:before{background-image: url("../pictures/blogs/rap.png");}
+.logcon.rnb:before,
+.icon.rnb:before{background-image: url("../pictures/blogs/rnb.png");}
+.logcon.rock:before,
+.icon.rock:before{background-image: url("../pictures/blogs/rock.png");}
+.logcon.classic:before,
+.icon.classic:before{background-image: url("../pictures/blogs/classic.png");}
+.logcon.indie:before,
+.icon.indie:before{background-image: url("../pictures/blogs/indie.png");}
+.logcon.edm:before,
+.icon.edm:before{background-image: url("../pictures/blogs/edm.png");}
 /* ================ The Timeline ================ */
 
 .timeline {
@@ -166,27 +183,15 @@ a{
   position: absolute;
   width: 60px; 
   height: 60px;
-  margin-top: -20px;
+  margin-top: -5px;
   display: block;
   background-size:100%;
   content:"";
   -webkit-filter: invert(1);
    filter: invert(1);
 }
-/* sooo fucking frust to get this right */
+/* sooo fucking frust to get this right icons are above */
 .icon:before{margin-left: -30px; left:50%;}
-/* can use icons here */
-.icon.rap:before{
-  background-image: url("../pictures/blogs/rap.png");}
-.icon.rnb:before{
-  background-image: url("../pictures/blogs/rnb.png");}
-.icon.rock:before{
-  background-image: url("../pictures/blogs/rock.png");}
-.icon.classic:before{
-  background-image: url("../pictures/blogs/classic.png");}
-.icon.indie:before{
-  background-image: url("../pictures/blogs/indie.png");}
-
 
 .time-wrapper {
   display: inline;
@@ -214,7 +219,7 @@ a{
 
 .desc {
   margin: 0em 0.75em 0 0;
-  color: var(--text_color);
+  color: var(--flag_tcol);
   font-size: var(--desc_font_size);
   font-style: italic;
   line-height: 1.5em;
@@ -234,6 +239,7 @@ a{
 .rock{font-family: var(--rock_font);font-weight: var(--rock_weight);font-size: var(--rock_size);}
 .classic{font-family: var(--classic_font);font-weight: var(--classic_weight);font-size: var(--classic_size);}
 .indie{font-family: var(--indie_font);font-weight: var(--indie_weight);font-size: var(--indie_size);}
+.edm{font-family: var(--edm_font);font-weight: var(--edm_weight);font-size: var(--edm_size);}
 
 /* ================ Timeline Media Queries ================ 
 

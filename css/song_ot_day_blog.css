@@ -70,7 +70,7 @@ body {
 	font-weight: var(--text_weight);
 	font-family: var(--text_font);
   padding: 80px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 .logo_right {
   font-weight: var(--text_weight);

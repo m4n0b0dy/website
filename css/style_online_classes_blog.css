@@ -34,9 +34,12 @@ a{
 .span_3_of_3 {
 	width: 100%;
 }
+
 /* making this invisible basically */
 .logo{
-	text-align: center;
+	text-align: left;
+	float:left;
+	width:100%;
 	color: var(--text_color);
   	font-size: 3.2vw;
 	font-weight: var(--chalk_weight);
@@ -104,6 +107,7 @@ input {
     background: transparent;
     outline: dashed;
     margin-bottom: 20px; /* Add some space below the input */
+
 }
 i{
 	font-weight: var(--chalk_weight);

@@ -23,8 +23,9 @@ else:
     song_comps['dir'] = 'l'
     song_comps['day'] = song_comps['day']+' -- '
 
-new_song = '''<!-- PYTHON AUTO ADD ;)-->
-<li><a href="{link}" target="_blank"><div class="icon {genre}"></div><div class="{genre}">
+header = '''<!-- PYTHON AUTO ADD ;)-->
+'''
+song_html = '''<li><a href="{link}" target="_blank"><div class="icon {genre}"></div><div class="{genre}">
     <div class="direction-{dir}">
       <div class="flag-wrapper">
         <span class="flag">{name}</span>
@@ -34,15 +35,16 @@ new_song = '''<!-- PYTHON AUTO ADD ;)-->
     </div>
   </div>
 </a></li>
-'''
-html = new_song.format(**song_comps)
+'''.format(**song_comps)
+
+html = header + song_html
 
 blog = 'song_ot_day_blog.html'
 with open(blog, 'r') as file :
     filedata = file.read()
     
 ans = 'y'
-if html in filedata:
+if song_html in filedata:
     print(song_comps['name'], 'already added to SOTD.')
     sys.exit()
 elif song_comps['name'] in filedata:

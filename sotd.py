@@ -1,9 +1,20 @@
 import pandas as pd
 from datetime import date
+import git
+import os
+import sys
+
+repo = git.Repo('../website')
+repo.git.checkout('gh-pages')
+repo.git.pull()
 
 tod = date.today()
 sotd_df = pd.read_csv('songs.csv')
 song_comps = sotd_df[sotd_df['day'] == tod.strftime("%#m/%#d/%Y")].to_dict('records')[0]
+
+if str(song_comps['name']) == 'NaN':
+    print('--No song has been added--')
+    sys.exit()
 
 if tod.timetuple().tm_yday % 2:
     song_comps['dir'] = 'r'
@@ -33,7 +44,7 @@ with open(blog, 'r') as file :
 ans = 'y'
 if html in filedata:
     print(song_comps['name'], 'already added to SOTD.')
-    ans = 'n'
+    sys.exit()
 elif song_comps['name'] in filedata:
     ans = input('Already have %s in SOTD, add anyway?(y) '%song_comps['name']).lower()
 if ans == 'y':
@@ -41,3 +52,8 @@ if ans == 'y':
     
 with open(blog, 'w') as file:
     file.write(filedata)
+    
+repo.git.add('*')
+repo.git.commit(m="sotd_for_"+str(tod))
+repo.git.push('origin', 'gh-pages')
+print(song_comps['name'], ' pushed!')

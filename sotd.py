@@ -36,7 +36,6 @@ song_html = '''<li><a href="{link}" target="_blank"><div class="icon {genre}"></
   </div>
 </a></li>
 '''.format(**song_comps)
-
 html = header + song_html
 
 blog = 'song_ot_day_blog.html'

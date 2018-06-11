@@ -7,7 +7,7 @@ import sys
 
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
-#repo.git.pull()
+repo.git.pull()
 
 gc = pygsheets.authorize(service_file='../client_ser_sec.json')
 gc_sh = gc.open_by_key('1IUi_Qy_PHxiopgHWNeiX3lYjeNjYsg2Gi8TYdP9qfiA')

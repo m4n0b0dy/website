@@ -4,13 +4,16 @@ from datetime import date
 import git
 import os
 import sys
+
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
-repo.git.pull()
+#repo.git.pull()
 
 gc = pygsheets.authorize(service_file='../client_ser_sec.json')
-wks = gc.open_by_key('1IUi_Qy_PHxiopgHWNeiX3lYjeNjYsg2Gi8TYdP9qfiA')[0]
-sotd_df = wks.get_as_df()
+gc_sh = gc.open_by_key('1IUi_Qy_PHxiopgHWNeiX3lYjeNjYsg2Gi8TYdP9qfiA')
+wks = gc_sh[0]
+df = wks.get_as_df()
+sotd_df = df[list(filter(None, list(df)))]
 
 tod = date.today()
 song_comps = sotd_df[sotd_df['day'] == tod.strftime("%#m/%#d/%Y")].to_dict('records')[0]

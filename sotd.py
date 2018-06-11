@@ -1,16 +1,18 @@
+import pygsheets
 import pandas as pd
 from datetime import date
 import git
 import os
 import sys
-
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
-#repo.git.pull()
+repo.git.pull()
 
-#want to update this to google sheet
+gc = pygsheets.authorize(service_file='../client_ser_sec.json')
+wks = gc.open_by_key('1IUi_Qy_PHxiopgHWNeiX3lYjeNjYsg2Gi8TYdP9qfiA')[0]
+sotd_df = wks.get_as_df()
+
 tod = date.today()
-sotd_df = pd.read_csv('songs.csv', encoding = 'latin1')
 song_comps = sotd_df[sotd_df['day'] == tod.strftime("%#m/%#d/%Y")].to_dict('records')[0]
 
 if str(song_comps['name']) == 'NaN':

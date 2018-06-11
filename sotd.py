@@ -4,11 +4,11 @@ from datetime import date
 import git
 import os
 import sys
-
+#git stuff
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
 repo.git.pull()
-
+#gsheets login stuff
 gc = pygsheets.authorize(service_file='../client_ser_sec.json')
 gc_sh = gc.open_by_key('1IUi_Qy_PHxiopgHWNeiX3lYjeNjYsg2Gi8TYdP9qfiA')
 wks = gc_sh[0]

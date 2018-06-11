@@ -58,4 +58,4 @@ with open(blog, 'w') as file:
 repo.git.add('*')
 repo.git.commit(m="sotd_for_"+str(tod))
 repo.git.push('origin', 'gh-pages')
-print(song_comps['name'], ' pushed!')
+print(song_comps['name'], 'pushed!')

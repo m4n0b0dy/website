@@ -6,10 +6,11 @@ import sys
 
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
-repo.git.pull()
+#repo.git.pull()
 
+#want to update this to google sheet
 tod = date.today()
-sotd_df = pd.read_csv('songs.csv')
+sotd_df = pd.read_csv('songs.csv', encoding = 'latin1')
 song_comps = sotd_df[sotd_df['day'] == tod.strftime("%#m/%#d/%Y")].to_dict('records')[0]
 
 if str(song_comps['name']) == 'NaN':

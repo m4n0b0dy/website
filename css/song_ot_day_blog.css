@@ -41,6 +41,7 @@
 
   --edm_font:"VT323";
   --edm_weight:1;
+
   /* these are kind like multipliers for font size*/
   --rock_size: 2.7em;
   --rap_size: 2.3em;
@@ -48,6 +49,7 @@
   --indie_size: 2.8em;
   --rnb_size: 2.9em;
   --edm_size:3.2em;
+  --gen_size:4em;
 }
 
 body {
@@ -119,6 +121,8 @@ a{
 .icon.indie:before{background-image: url("../pictures/blogs/indie.png");}
 .logcon.edm:before,
 .icon.edm:before{background-image: url("../pictures/blogs/edm.png");}
+.logcon.gen:before,
+.icon.gen:before{background-image: url("../pictures/blogs/down.png");}
 /* ================ The Timeline ================ */
 
 .timeline {
@@ -240,6 +244,7 @@ a{
 .classic{font-family: var(--classic_font);font-weight: var(--classic_weight);font-size: var(--classic_size);}
 .indie{font-family: var(--indie_font);font-weight: var(--indie_weight);font-size: var(--indie_size);}
 .edm{font-family: var(--edm_font);font-weight: var(--edm_weight);font-size: var(--edm_size);}
+.gen{font-family: var(--text_font);font-weight: var(--text_weight);font-size: var(--gen_size);}
 
 /* ================ Timeline Media Queries ================ 
 

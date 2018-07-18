@@ -4,6 +4,7 @@ from datetime import date
 import git
 import os
 import sys
+
 #git stuff
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
@@ -15,7 +16,11 @@ wks = gc_sh[0]
 df = wks.get_as_df()
 sotd_df = df[list(filter(None, list(df)))]
 
-tod = date.today()
+if len(sys.argv)==2:
+    tod = sys.argv[1]
+else:
+    tod = date.today()
+
 song_comps = sotd_df[sotd_df['day'] == tod.strftime("%#m/%#d/%Y")].to_dict('records')[0]
 
 if str(song_comps['name']) == 'NaN':

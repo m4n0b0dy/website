@@ -17,7 +17,7 @@ df = wks.get_as_df()
 sotd_df = df[list(filter(None, list(df)))]
 
 if len(sys.argv)==2:
-    tod = sys.argv[1]
+    tod = date.strptime(sys.argv[1], '%y-%m-%d')
 else:
     tod = date.today()
 

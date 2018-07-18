@@ -1,6 +1,7 @@
 import pygsheets
 import pandas as pd
 from datetime import date
+import datetime as dt
 import git
 import os
 import sys
@@ -17,7 +18,7 @@ df = wks.get_as_df()
 sotd_df = df[list(filter(None, list(df)))]
 
 if len(sys.argv)==2:
-    tod = date.datetime.strptime(sys.argv[1], '%y-%m-%d')
+    tod = dt.datetime.strptime(sys.argv[1], '%Y-%m-%d')
 else:
     tod = date.today()
 

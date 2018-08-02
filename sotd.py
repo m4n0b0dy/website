@@ -18,7 +18,6 @@ sotd_df = df[list(filter(None, list(df)))]
 sotd_df = sotd_df.dropna(axis=0)
 
 new_songs_df = sotd_df[sotd_df['published?'] != 'done']
-tod = date.today()
 
 for index, row in new_songs_df.iterrows():
 	song_comps = dict(row)
@@ -37,13 +36,13 @@ for index, row in new_songs_df.iterrows():
 	header = '''<!-- PYTHON AUTO ADD ;)-->
 	'''
 	song_html = '''<li><a href="{link}" target="_blank"><div class="icon {genre}"></div><div class="{genre}">
-	<div class="direction-{dir}">
-	<div class="flag-wrapper">
-	<span class="flag">{name}</span>
-	<span class="time-wrapper"><span class="time">{day}</span></span>
-	</div>
-	<div class="desc">{artist}</div>
-	</div>
+		<div class="direction-{dir}">
+			<div class="flag-wrapper">
+				<span class="flag">{name}</span>
+				<span class="time-wrapper"><span class="time">{day}</span></span>
+			</div>
+			<div class="desc">{artist}</div>
+		</div>
 	</div>
 	</a></li>
 	'''.format(**song_comps)
@@ -69,7 +68,7 @@ for index, row in new_songs_df.iterrows():
 	repo.git.commit(m="sotd_for_"+str(song_comps['day']))
 	repo.git.push('origin', 'gh-pages')
 	print(song_comps['name'], 'pushed!')
-	if dt.datetime.strptime(song_comps['day'], '%Y-%m-%d') == tod:
+	if dt.datetime.strptime(song_comps['day'], '%Y-%m-%d') == date.today().date():
 		break
 #write to g sheet
 sotd_df['published?'] = 'done'

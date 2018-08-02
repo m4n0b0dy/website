@@ -69,7 +69,7 @@ for index, row in new_songs_df.iterrows():
 	repo.git.commit(m="sotd_for_"+str(song_comps['day']))
 	repo.git.push('origin', 'gh-pages')
 	print(song_comps['name'], 'pushed!')
-	if song_comps['day'] == tod.strftime("%#m/%#d/%Y"):
+	if dt.datetime.strptime(song_comps['day'], '%Y-%m-%d') == tod:
 		break
 #write to g sheet
 sotd_df['published?'] = 'done'

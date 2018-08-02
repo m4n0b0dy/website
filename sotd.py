@@ -21,12 +21,13 @@ new_songs_df = sotd_df[sotd_df['published?'] != 'done']
 
 for index, row in new_songs_df.iterrows():
 	song_comps = dict(row)
+	cur_day = dt.datetime.strptime(song_comps['day'], '%m/%d/%Y')
 
 	if str(song_comps['name']) == 'NaN':
 		print('--No song has been added--')
 		sys.exit()
 
-	if tod.timetuple().tm_yday % 2:
+	if cur_day.timetuple().tm_yday % 2:
 		song_comps['dir'] = 'r'
 		song_comps['day'] = ' -- '+song_comps['day']
 	else:
@@ -68,8 +69,8 @@ for index, row in new_songs_df.iterrows():
 	repo.git.commit(m="sotd_for_"+str(song_comps['day']))
 	repo.git.push('origin', 'gh-pages')
 	print(song_comps['name'], 'pushed!')
-	if dt.datetime.strptime(song_comps['day'], '%Y-%m-%d') == date.today().date():
+	if cur_day == date.today().date():
 		break
 #write to g sheet
 sotd_df['published?'] = 'done'
-wks.set_dataframe(sotd_df)
+wks.set_dataframe(sotd_df, (0,0))

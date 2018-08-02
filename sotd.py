@@ -21,11 +21,11 @@ new_songs_df = sotd_df[sotd_df['published?'] != 'done']
 
 for index, row in new_songs_df.iterrows():
 	song_comps = dict(row)
-	cur_day = dt.datetime.strptime(song_comps['day'], '%m/%d/%Y')
+	cur_day = dt.datetime.strptime(song_comps['day'], '%m/%d/%Y').date()
 
 	if str(song_comps['name']) == 'NaN':
 		print('--No song has been added--')
-		sys.exit()
+		continue
 
 	if cur_day.timetuple().tm_yday % 2:
 		song_comps['dir'] = 'r'
@@ -37,18 +37,18 @@ for index, row in new_songs_df.iterrows():
 	header = '''<!-- PYTHON AUTO ADD ;)-->
 	'''
 	song_html = '''<li><a href="{link}" target="_blank"><div class="icon {genre}"></div><div class="{genre}">
-		<div class="direction-{dir}">
-			<div class="flag-wrapper">
-				<span class="flag">{name}</span>
-				<span class="time-wrapper"><span class="time">{day}</span></span>
-			</div>
-			<div class="desc">{artist}</div>
-		</div>
-	</div>
+	    <div class="direction-{dir}">
+	      <div class="flag-wrapper">
+	        <span class="flag">{name}</span>
+	        <span class="time-wrapper"><span class="time">{day}</span></span>
+	      </div>
+	      <div class="desc">{artist}</div>
+	    </div>
+	  </div>
 	</a></li>
 	'''.format(**song_comps)
 	html = header + song_html
-
+	
 	blog = 'song_ot_day_blog.html'
 	with open(blog, 'r') as file :
 		filedata = file.read()
@@ -56,20 +56,22 @@ for index, row in new_songs_df.iterrows():
 	ans = 'y'
 	if song_html in filedata:
 		print(song_comps['name'], 'already added to SOTD.')
-		sys.exit()
+		continue
 	elif song_comps['name'] in filedata:
 		ans = input('Already have %s in SOTD, add anyway?(y) '%song_comps['name']).lower()
 	if ans == 'y':
 		filedata = filedata.replace('<!-- PYTHON AUTO ADD ;)-->', html)
+	else:
+		continue
 
 	with open(blog, 'w') as file:
 		file.write(filedata)
 
 	repo.git.add('*')
-	repo.git.commit(m="sotd_for_"+str(song_comps['day']))
-	repo.git.push('origin', 'gh-pages')
+	#repo.git.commit(m="sotd_for_"+str(song_comps['day']))
+	#repo.git.push('origin', 'gh-pages')
 	print(song_comps['name'], 'pushed!')
-	if cur_day == date.today().date():
+	if cur_day == date.today():
 		break
 #write to g sheet
 sotd_df['published?'] = 'done'

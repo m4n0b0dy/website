@@ -36,15 +36,15 @@ for index, row in new_songs_df.iterrows():
 	header = '''<!-- PYTHON AUTO ADD ;)-->
 	'''
 	song_html = '''<li><a href="{link}" target="_blank"><div class="icon {genre}"></div><div class="{genre}">
-	    <div class="direction-{dir}">
-	      <div class="flag-wrapper">
-	        <span class="flag">{name}</span>
-	        <span class="time-wrapper"><span class="time">{html_day}</span></span>
-	      </div>
-	      <div class="desc">{artist}</div>
-	    </div>
-	  </div>
-	</a></li>
+    <div class="direction-{dir}">
+      <div class="flag-wrapper">
+        <span class="flag">{name}</span>
+        <span class="time-wrapper"><span class="time">{html_day}</span></span>
+      </div>
+      <div class="desc">{artist}</div>
+    </div>
+  </div>
+</a></li>
 	'''.format(**song_comps)
 	html = header + song_html
 
@@ -77,5 +77,4 @@ for index, row in new_songs_df.iterrows():
 	if cur_day == date.today():
 		break
 #write to g sheet
-print(sotd_df_done)
 wks.set_dataframe(sotd_df_done, 'A1')

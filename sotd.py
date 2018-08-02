@@ -4,35 +4,34 @@ from datetime import date
 import datetime as dt
 import git
 import sys
+from numpy import nan
 
 #git stuff
 repo = git.Repo('../website')
 repo.git.checkout('gh-pages')
-#repo.git.pull()
+repo.git.pull()
 #gsheets login stuff
 gc = pygsheets.authorize(service_file='../client_ser_sec.json')
 gc_sh = gc.open_by_key('1IUi_Qy_PHxiopgHWNeiX3lYjeNjYsg2Gi8TYdP9qfiA')
 wks = gc_sh[0]
 df = wks.get_as_df()
 sotd_df = df[list(filter(None, list(df)))]
-sotd_df = sotd_df.dropna(axis=0)
+sotd_df.replace('', nan, inplace=True)
+sotd_df_all = sotd_df.dropna(axis=0, subset=['name'])
+sotd_df_done = sotd_df.dropna(axis=0)
 
-new_songs_df = sotd_df[sotd_df['published?'] != 'done']
+new_songs_df = sotd_df_all[sotd_df_all['published?'] != 'done']
 
 for index, row in new_songs_df.iterrows():
 	song_comps = dict(row)
 	cur_day = dt.datetime.strptime(song_comps['day'], '%m/%d/%Y').date()
 
-	if str(song_comps['name']) == 'NaN':
-		print('--No song has been added--')
-		continue
-
 	if cur_day.timetuple().tm_yday % 2:
 		song_comps['dir'] = 'r'
-		song_comps['day'] = ' -- '+song_comps['day']
+		song_comps['html_day'] = ' -- '+song_comps['day']
 	else:
 		song_comps['dir'] = 'l'
-		song_comps['day'] = song_comps['day']+' -- '
+		song_comps['html_day'] = song_comps['day']+' -- '
 
 	header = '''<!-- PYTHON AUTO ADD ;)-->
 	'''
@@ -40,7 +39,7 @@ for index, row in new_songs_df.iterrows():
 	    <div class="direction-{dir}">
 	      <div class="flag-wrapper">
 	        <span class="flag">{name}</span>
-	        <span class="time-wrapper"><span class="time">{day}</span></span>
+	        <span class="time-wrapper"><span class="time">{html_day}</span></span>
 	      </div>
 	      <div class="desc">{artist}</div>
 	    </div>
@@ -48,7 +47,7 @@ for index, row in new_songs_df.iterrows():
 	</a></li>
 	'''.format(**song_comps)
 	html = header + song_html
-	
+
 	blog = 'song_ot_day_blog.html'
 	with open(blog, 'r') as file :
 		filedata = file.read()
@@ -68,11 +67,15 @@ for index, row in new_songs_df.iterrows():
 		file.write(filedata)
 
 	repo.git.add('*')
-	#repo.git.commit(m="sotd_for_"+str(song_comps['day']))
-	#repo.git.push('origin', 'gh-pages')
+	repo.git.commit(m="sotd_for_"+str(song_comps['day']))
+	repo.git.push('origin', 'gh-pages')
 	print(song_comps['name'], 'pushed!')
+	song_comps['published?'] = 'done'
+	song_comps.pop('dir', None)
+	song_comps.pop('html_day', None)
+	sotd_df_done = sotd_df_done.append(song_comps, ignore_index=True)
 	if cur_day == date.today():
 		break
 #write to g sheet
-sotd_df['published?'] = 'done'
-wks.set_dataframe(sotd_df, (0,0))
+print(sotd_df_done)
+wks.set_dataframe(sotd_df_done, 'A1')

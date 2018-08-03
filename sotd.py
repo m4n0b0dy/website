@@ -5,6 +5,8 @@ import datetime as dt
 import git
 import sys
 from numpy import nan
+#get rid of warning
+pd.options.mode.chained_assignment = None
 
 #git stuff
 repo = git.Repo('../website')

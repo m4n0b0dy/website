@@ -4,7 +4,7 @@ document.write('\
   <div id="topBar">\
     <a id="initials" href="home.html" target ="_blank">KV</a>\
     <a id="top_pic" href="https://www.linkedin.com/in/keenan-venuti-224a288a" target ="_blank">\
-    <img src="pictures/me.png" style="width: 80px;height: 80px;"></img></a>\
+    <img src="pictures/me.jpg" style="width: 75px;height: 80px;"></img></a>\
   </div>\
 \
   <div id="centerColumn">\

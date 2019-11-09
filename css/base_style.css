@@ -1,8 +1,9 @@
 :root {
-    --col1: #5e080e;
-    --col2: #EEB4B3;
+    /*--col1: #5e080e;
+    --col2: #EEB4B3;*/
+    --col1: #1C1C1C;
+    --col2: #BDC2BF;
     --font1: 'Space Mono';
-    --font2: 'Buda';
     --font3: 'Raleway';
     --font4: 'Passion One';
 }
@@ -99,7 +100,7 @@ nav a:hover {
 #introText {
    margin-top: 160px;
    font-size: 40px;
-   font-family: var(--font2);
+   font-family: var(--font3);
    padding-bottom: 10px;
    border-bottom: 5px solid var(--col2);
    font-weight: bold;

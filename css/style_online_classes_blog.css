@@ -6,7 +6,7 @@
     --text_color: white;
     --art_text_hover: black;
     --post_line_color: #FFFFFF;
-    --font_weight: 50;
+    --chalk_weight: 500;
 }
 body{
 	margin: 0;
@@ -41,7 +41,7 @@ a{
 	float:left;
 	width:100%;
 	color: var(--text_color);
-  	font-size: 3.2vw;
+  	font-size: 3.4vw;
 	font-weight: var(--chalk_weight);
 	font-family: var(--chalk_font);
   	padding: 90px;
@@ -49,21 +49,21 @@ a{
 /* Blog Posts */
 .blog-post{
 	font-weight: var(--chalk_weight);
-	margin: 0 auto 1.5em auto;
+	margin: 0 auto 1.7em auto;
 }
 .blog-title{
 	font-weight: var(--chalk_weight);
 	text-decoration: underline;
-	font-size: 2vw;
+	font-size: 3vw;
 	margin-top: 0px;
 }
 .blog-content{
 	font-weight: var(--chalk_weight);
-	font-size: 1.2vw;
+	font-size: 1.5vw;
 }
 .blog-content-list{
 	font-weight: var(--chalk_weight);
-	font-size: 1vw;
+	font-size: 1.2vw;
 	border-left: 5px solid var(--post_line_color);
 	padding-left: 15px;
 }
@@ -101,9 +101,9 @@ input {
 	color: var(--text_color);
 	font: var(--chalk_font);
 	float: right;
-    width: 23%; /* Full-width */
-    font-size: 1.6vw; /* Increase font-size */
-    padding: 15px 15px 15px 15px; /* Add some padding */
+    width: 18%; /* Full-width */
+    font-size: 1.2vw; /* Increase font-size */
+    padding: 12px 12px 12px 12px; /* Add some padding */
     background: transparent;
     outline: dashed;
     margin-bottom: -50px; /* Add some space below the input */

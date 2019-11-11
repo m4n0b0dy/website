@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush');
+@import url('https://fonts.googleapis.com/css?family=New+Rocker');
+@import url('https://fonts.googleapis.com/css?family=Molle:400i');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+:root {
+  /* overall attirbutes */
+  --text_color: white;
+  --text_font: var(--font4);
+  --text_weight: 1;
+  /* timeline attributes */
+  --time_col: var(--col1);
+  --t_opac: .5;
+  /* flag attributes */
+  --flag_col: ;
+  --flag_tcol: white;
+  
+  /* otherdate attributes */
+  --logo_font_size: 4em;
+  --date_sz: .666em;
+  --date_tcol: var(--flag_tcol);
+  --date_bcol: ;
+  --desc_font_size: .5em;
+  --space_bt_icons: 3em;
+  /* genre stuff */
+  --rap_font:"Rock Salt";
+  --rap_weight:5;
+
+  --rnb_font:"Molle";
+  --rnb_weight:1;
+
+  --classic_font:"Alex Brush";
+  --classic_weight:50;
+
+  --indie_font:"Special Elite";
+  --indie_weight:50;
+
+  --rock_font:"New Rocker";
+  --rock_weight:50;
+
+  --edm_font:"VT323";
+  --edm_weight:1;
+
+  /* these are kind like multipliers for font size*/
+  --rock_size: 2.7em;
+  --rap_size: 2.3em;
+  --classic_size: 3.1em;
+  --indie_size: 2.8em;
+  --rnb_size: 2.9em;
+  --edm_size:3.2em;
+  --gen_size:4em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+  background-image: url("../pictures/blogs/graf.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--text_font);
+  font-weight: var(--text_weight);
+  overflow-x:hidden;
+  color: var(--text_color);
+}
+.logo{
+	text-align: left;
+	color: var(--text_color);
+  font-size: var(--logo_font_size);
+	font-weight: var(--text_weight);
+	font-family: var(--text_font);
+  padding: 80px;
+  margin-bottom: 20px;
+}
+.logo_right {
+  font-weight: var(--text_weight);
+  color: var(--text_color);
+  font: var(--text_font);
+  float: right;
+  font-size: .22em;
+}
+.logo_cap{
+  margin-top: 50px;
+  font-size:.5em;
+}
+.logo_caps{
+  float: right;
+  right: 15px;
+  margin-top: -10px;
+  font-size:.9em;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.logcon:before {
+  position: absolute;
+  right: 240px;
+  margin-top: -5px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-size:100%;
+  content:"";
+  -webkit-filter: invert(1);
+   filter: invert(1);
+}
+/* add these to vaariables */
+
+.logcon.rap:before,
+.icon.rap:before{background-image: url("../pictures/blogs/rap.png");}
+.logcon.rnb:before,
+.icon.rnb:before{background-image: url("../pictures/blogs/rnb.png");}
+.logcon.rock:before,
+.icon.rock:before{background-image: url("../pictures/blogs/rock.png");}
+.logcon.classic:before,
+.icon.classic:before{background-image: url("../pictures/blogs/classic.png");}
+.logcon.indie:before,
+.icon.indie:before{background-image: url("../pictures/blogs/indie.png");}
+.logcon.edm:before,
+.icon.edm:before{background-image: url("../pictures/blogs/edm.png");}
+.logcon.gen:before,
+.icon.gen:before{background-image: url("../pictures/blogs/down.png");}
+/* ================ The Timeline ================ */
+
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em 0;
+  list-style-type: none;
+  
+}
+.timeline:before {
+  opacity: var(--t_opac);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  content: ' ';
+  display: block;
+  width: 60px;
+  height: 100%;
+  margin-left: -30px;
+  background: var(--time_col);
+}
+
+.timeline li {
+  padding: var(--space_bt_icons) 0;
+}
+
+.timeline li:after {
+  content: "";
+  display: block;
+  height: 0;
+}
+
+.direction-l {
+  width: 100%;
+  right: 55%;
+  position: relative;
+  text-align: right;
+}
+
+.direction-r {
+  width: 100%;
+  left: 55%;
+  position: relative;
+}
+
+.flag-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: var(--flag_col);
+  color: var(--flag_tcol);
+  text-align: left;
+}
+
+.icon:before {
+  position: absolute;
+  width: 60px; 
+  height: 60px;
+  margin-top: -5px;
+  display: block;
+  background-size:100%;
+  content:"";
+  -webkit-filter: invert(1);
+   filter: invert(1);
+}
+/* sooo fucking frust to get this right icons are above */
+.icon:before{margin-left: -30px; left:50%;}
+
+.time-wrapper {
+  display: inline;
+  line-height: 1em;
+  font-size: var(--date_sz);
+  color: var(--date_col);
+  vertical-align: middle;
+}
+
+.direction-l .time-wrapper {
+  float: left;
+}
+
+.direction-r .time-wrapper {
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  padding: 4px 6px;
+  font-size: var(--date_sz);
+  background: var(--date_bcol);
+  color: var(--date_tcol);
+}
+
+.desc {
+  margin: 0em 0.75em 0 0;
+  color: var(--flag_tcol);
+  font-size: var(--desc_font_size);
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+.direction-r .desc {
+  margin: 0em 0 0 0.75em;
+}
+/* specific to rap font */
+.rap .desc {
+  margin: .2em 0 0 0.75em;
+}
+
+/* change genre fonts */
+.rap{font-family: var(--rap_font);font-weight: var(--rap_weight);font-size: var(--rap_size);}
+.rnb{font-family: var(--rnb_font);font-weight: var(--rnb_weight);font-size: var(--rnb_size);}
+.rock{font-family: var(--rock_font);font-weight: var(--rock_weight);font-size: var(--rock_size);}
+.classic{font-family: var(--classic_font);font-weight: var(--classic_weight);font-size: var(--classic_size);}
+.indie{font-family: var(--indie_font);font-weight: var(--indie_weight);font-size: var(--indie_size);}
+.edm{font-family: var(--edm_font);font-weight: var(--edm_weight);font-size: var(--edm_size);}
+.gen{font-family: var(--text_font);font-weight: var(--text_weight);font-size: var(--gen_size);}
+
+/* ================ Timeline Media Queries ================ 
+
+@media screen and (max-width: 660px) {
+
+.timeline {
+ 	width: 100%;
+	padding: 4em 0 1em 0;
+}
+
+.timeline li {
+	padding: 2em 0;
+}
+
+.direction-l,
+.direction-r {
+	float: none;
+	width: 100%;
+
+	text-align: center;
+}
+
+.flag-wrapper {
+	text-align: center;
+}
+
+.flag {
+	background: rgb(255,255,255);
+	z-index: 15;
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: -30px;
+	left: 50%;
+	content: ' ';
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin-left: -9px;
+	background: #fff;
+	border-radius: 10px;
+	border: 4px solid rgb(255,80,80);
+	z-index: 10;
+}
+
+.direction-l .flag:after,
+.direction-r .flag:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: -8px;
+	height: 0;
+	width: 0;
+	margin-left: -8px;
+	border: solid transparent;
+	border-bottom-color: rgb(255,255,255);
+	border-width: 8px;
+	pointer-events: none;
+}
+
+.time-wrapper {
+	display: block;
+	position: relative;
+	margin: 4px 0 0 0;
+	z-index: 14;
+}
+
+.direction-l .time-wrapper {
+	float: none;
+}
+
+.direction-r .time-wrapper {
+	float: none;
+}
+
+.desc {
+	position: relative;
+	margin: 1em 0 0 0;
+	padding: 1em;
+	background: rgb(245,245,245);
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	box-shadow: 0 0 1px rgba(0,0,0,0.20);
+	
+  z-index: 15;
+}
+
+.direction-l .desc,
+.direction-r .desc {
+	position: relative;
+	margin: 1em 1em 0 1em;
+	padding: 1em;
+	
+  z-index: 15;
+}
+
+}
+
+@media screen and (min-width: 400px ?? max-width: 660px) {
+
+.direction-l .desc,
+.direction-r .desc {
+	margin: 1em 4em 0 4em;
+}
+
+}
+*/

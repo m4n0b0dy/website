@@ -136,6 +136,7 @@ h3 {
   border: 1px solid var(--col2);
   border-radius: 3px;
   transition: all 350ms;
+  font-family: var(--font1);
 }
 .project-info-button:hover {
   color: var(--col1);

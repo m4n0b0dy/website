@@ -31,7 +31,7 @@ $(function() {
       data: $(form).serialize(),
       dataType: "json",
       success: function(data) {
-          $("form#contact_form :input").prop("disabled", true);
+          $("form#contact :input").prop("disabled", true);
          
       },
       error: function(){

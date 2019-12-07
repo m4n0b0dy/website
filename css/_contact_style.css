@@ -1,7 +1,7 @@
 #success_message{ display: none;}
 
-fieldset{background-color: var(--col2);
-        color: var(--col1);
+fieldset{background-color: white;
+        color: black;
         }
 
 .fsSubmitButton{

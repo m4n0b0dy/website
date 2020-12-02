@@ -7,9 +7,9 @@ h2 {
 
 h3 {
   font-family: var(--font1);
-  padding-top: 20px;
-  margin: 0 0 .5em;
-  font-size: 1em;
+  padding-top: 5px;
+  margin: 0;
+  font-size: .8em;
 }
 
 *, *:before, *:after {
@@ -110,10 +110,11 @@ h3 {
   color: var(--col2);
   background: var(--col2);
   opacity: 0;
-  transition: all 350ms ease-in;
+  transition: all 400ms ease-in;
 }
 .project-info:hover {
   opacity: 1;
+  border-radius: 100%;
 }
 @media (max-width: 520px) {
   .project-info {

@@ -45,7 +45,7 @@ section h1 {
 }
 
 /* I made the h2 and scroll ones*/
-section h2 {
+section h2, h3 {
   position: absolute;
   top: 63%;
   left: 50%;
@@ -56,6 +56,9 @@ section h2 {
   font: normal 300 20px/1 var(--font3);
   text-align: center;
   white-space: nowrap;
+}
+section h3 {
+  font: 13px/1 var(--font3);
 }
 
 /* scroll up*/

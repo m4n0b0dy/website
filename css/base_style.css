@@ -34,7 +34,7 @@ nav{
    position: fixed;
 }
 
-#initials {
+/* #initials {
    display: inline;
    width: 100px;
    min-width: 100px;
@@ -47,10 +47,12 @@ nav{
    color: var(--col2);
    background-color: var(--col1);
    text-decoration: none;
-}
+}*/ 
 #top_pic{
-  position: fixed;
-  padding-left: 150px;
+  position: absolute;
+  height: 90%;
+  width: auto;
+  float: left;
 }
 #navWrapper {
    width: 100%;

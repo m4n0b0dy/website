@@ -2,7 +2,8 @@ document.write('\
 \
 <body>\
   <div id="topBar">\
-    <a id="initials" href="https://www.linkedin.com/in/keenan-venuti-224a288a" target ="_blank">KV</a>\
+    <a href="https://www.linkedin.com/in/keenan-venuti-224a288a" target ="_blank">\
+    <img id="top_pic" alt="robot" src="pictures/logo.png"></a>\
   </div>\
 \
   <div id="centerColumn">\
